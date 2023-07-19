@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>aceitas dar uns beijo hj?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container h1 {
+            font-size: 56px;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .round-button {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        #nao-button {
+            margin-left: 20px;
+            position: absolute;
+            left: 120px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes pulse {
+            0% {
+                background-color: red;
+            }
+
+            25% {
+                background-color: purple;
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            75% {
+                background-color: green;
+            }
+
+            100% {
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video src="https://i.imgur.com/ejPP545.mp4" autoplay muted loop></video>
+
+    <div class="container">
+        <h1 style="color: #ff0000;">Aceitas dar uns beijos hj?</h1>
+        <a id="sim-button" class="round-button" href="javascript:void(0);" onclick="playAudio();">Sim</a>
+        <button id="nao-button" class="round-button" onmouseover="moveButton();">Nao</button>
+    </div>
+
+    <script>
+        var audioElement;
+
+        function playAudio() {
+            audioElement = new Audio('http://www.audiosengracados.com.br/wp-content/uploads/2020/01/gemido_trollante-www.audiosengracados.com_.br_.mp3');
+            audioElement.loop = true;
+            audioElement.autoplay = true;
+            audioElement.play();
+        }
+
+        function moveButton() {
+            var naoButton = document.getElementById("nao-button");
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+            naoButton.style.left = x + "px";
+            naoButton.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
