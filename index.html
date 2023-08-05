@@ -110,13 +110,11 @@
             var naoButton = document.getElementById("nao-button");
             var buttonWidth = naoButton.offsetWidth;
             var buttonHeight = naoButton.offsetHeight;
-            var maxRange = 200;
+            var maxX = window.innerWidth - buttonWidth;
+            var maxY = window.innerHeight - buttonHeight;
 
-            var x = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
-            var y = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
-
-            naoButton.style.left = x + "px";
-            naoButton.style.top = y + "px";
+            var x = Math.floor(Math.random() * maxX);
+            var y = Math.floor(Math.random() * maxY);
         }
     </script>
 </body>
