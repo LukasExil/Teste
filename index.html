@@ -108,10 +108,13 @@
 
         function moveButton() {
             var naoButton = document.getElementById("nao-button");
-            var x = Math.floor(Math.random() * window.innerWidth);
-            var y = Math.floor(Math.random() * window.innerHeight);
-            naoButton.style.left = x + "px";
-            naoButton.style.top = y + "px";
+            var buttonWidth = naoButton.offsetWidth;
+            var buttonHeight = naoButton.offsetHeight;
+            var maxX = window.innerWidth - buttonWidth;
+            var maxY = window.innerHeight - buttonHeight;
+
+            var x = Math.floor(Math.random() * maxX);
+            var y = Math.floor(Math.random() * maxY);
         }
     </script>
 </body>
